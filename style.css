@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+ background-color: cadetblue;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.start-game{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.start-game h1 {
+    width: 300px;
+    margin: 50px;
+}
+
+.start-game button {
+    border-radius: 100px;
+} 
+
+.gameboard{
+    display: flex;
+    width: 100%;
+}
+
+.scorebox {
+    display: flex;
+}
+
+.timer{
+    width: 100%;
+}
+
+.question {
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.buttonflex{
+    display: flex;
+    width: 100%;
+    margin-left: 50px;
+}
+
+.buttonflex button {
+    display: flex;
+    border-radius: 100px;
+    justify-content: space-around;
+}
+
+.question h2 {
+    display: flex;
+    background-color: antiquewhite;
+    height: 100px;
+    width: 75%;
+    margin-left: 50px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+}
+
+.button-box{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-right: 100px;
+}
+
+
+.answers {
+    margin-top: 50px;
+    background-color: antiquewhite;
+    padding: 20px;
+    align-content: center;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 50%;
+    height: 100px;
+    font-size: 15px;
+    text-decoration: underline;
+}
