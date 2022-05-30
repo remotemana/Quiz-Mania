@@ -23,31 +23,44 @@ const answerButtonsElement1 = document.getElementById('answer-btn1');
 const answerButtonsElement2 = document.getElementById('answer-btn2');
 const answerButtonsElement3 = document.getElementById('answer-btn3');
 const answerButtonsElement4 = document.getElementById('answer-btn4');
+const timerElement = document.getElementById('timerElement');
 
 const timeLeft = 200;
 
-let shuffled, currentQuestions
+let shuffled
 
 startButton.addEventListener('click', startGame);
 
 
-
-
+let currentQuestionCount = 0;
+let currentQuestions = 0;
+let currentQuestion
 function startGame(){
+    startTimer();
     console.log('started')
     shuffled = questions.sort(() => Math.floor(Math.random() -.5));
-    currentQuestions = 0;
-    startText.textContent = "Next Question";
     loadNextQuestion();
 }
 
 function loadNextQuestion() {
-    showQuestion(shuffled[currentQuestions])
-    showAnswer(shuffled[currentQuestions])
+    endCount = currentQuestionCount++
+    currentQuestion = shuffled[currentQuestions]
+    showQuestion(currentQuestion)
+    showAnswer(currentQuestion)
+    console.log(endCount)
+    if (endCount === questions.length-1) {
+        endGame()
+    }
+
 }
  
 function showQuestion(questions) {
 questionElement.textContent = questions.question
+}
+
+function startTimer() {
+    timer.textContent = "Time Remaining: " + timeLeft;
+    timer
 }
 
 function showAnswer(questions) {
@@ -62,23 +75,23 @@ answerButtonsElement2.addEventListener("click", checkAnswer)
 answerButtonsElement3.addEventListener("click", checkAnswer)
 answerButtonsElement4.addEventListener("click", checkAnswer)
 
-function checkAnswer() { 
-    console.log("linked")
-let answer1 = document.getElementById("answer-btn1").textContent
+function checkAnswer(event) { 
 
-if (answer1 === questions.answers.correct) {
-    console.log(answerButtonsElement1.textContent)
-} else if (answerButtonsElement2) {
-    console.log(answerButtonsElement2.textContent)
-} else if (answerButtonsElement3) {
-    console.log(answerButtonsElement3.textContent)
-} else if (answerButtonsElement4) {
-    console.log(answerButtonsElement4)
+    if (event.target.textContent != currentQuestion.correctAnswer){
+        console.log("incorrect")
+        timeLeft = timeLeft - 10;
+
+    } else if (event.target.textContent === currentQuestion.correctAnswer) {
+    console.log("correct")
+    currentQuestions++
+    loadNextQuestion()
 }
+
 }
 
 function endGame() {
-    
+    console.log("end game")
+    alert("game ended would you like to play again?")
 }
 
 const questions = [
@@ -100,7 +113,7 @@ const questions = [
     {
         question:"What does the fox say?",
         answers:[{text:"Gering-ding-ding-ding-dingeringeding!", correct: false}, {text:"Joff-tchoff-tchoffo-tchoffo-tchoff!", correct: false}, {text:"Jacha-chacha-chacha-chow!", correct: false}, {text: "All of these", correct: true}],
-        correctAnswer: "All of the these"
+        correctAnswer: "All of these"
     },
     {
         question:"What Color is the sky",
