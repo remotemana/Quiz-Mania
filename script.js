@@ -57,14 +57,24 @@ function showAnswer(questions) {
     answerButtonsElement4.textContent = questions.answers[3].text
 }
 
-
 answerButtonsElement1.addEventListener("click", checkAnswer)
 answerButtonsElement2.addEventListener("click", checkAnswer)
 answerButtonsElement3.addEventListener("click", checkAnswer)
 answerButtonsElement4.addEventListener("click", checkAnswer)
 
 function checkAnswer() { 
+    console.log("linked")
+let answer1 = document.getElementById("answer-btn1").textContent
 
+if (answer1 === questions.answers.correct) {
+    console.log(answerButtonsElement1.textContent)
+} else if (answerButtonsElement2) {
+    console.log(answerButtonsElement2.textContent)
+} else if (answerButtonsElement3) {
+    console.log(answerButtonsElement3.textContent)
+} else if (answerButtonsElement4) {
+    console.log(answerButtonsElement4)
+}
 }
 
 function endGame() {
