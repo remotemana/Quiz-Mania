@@ -24,8 +24,8 @@ const answerButtonsElement2 = document.getElementById('answer-btn2');
 const answerButtonsElement3 = document.getElementById('answer-btn3');
 const answerButtonsElement4 = document.getElementById('answer-btn4');
 const timerElement = document.getElementById('timerElement');
-
-const timeLeft = 200;
+var scores = []
+var timeLeft = 100;
 
 let shuffled
 
@@ -59,8 +59,17 @@ questionElement.textContent = questions.question
 }
 
 function startTimer() {
-    timer.textContent = "Time Remaining: " + timeLeft;
-    timer
+    timerElement.textContent = "Time Remaining: " + timeLeft;
+    timer = setInterval(function () {
+        console.log(timeLeft);
+        timeLeft--;
+        timerElement.textContent = "Time Remaining: " + timeLeft;
+        if(timeLeft <=  0) {
+            clearInterval(timer);
+            timerElement.textContent = "Time Remaining: ";
+            endGame()
+        }
+    }, 1000);
 }
 
 function showAnswer(questions) {
@@ -91,7 +100,11 @@ function checkAnswer(event) {
 
 function endGame() {
     console.log("end game")
-    alert("game ended would you like to play again?")
+    currentScore = timeLeft;
+    startText.textContent = "Your score is " + currentScore;
+    alert("Game Over!")
+
+    
 }
 
 const questions = [
