@@ -43,7 +43,7 @@ hideThings()
 
 function hideThings() {
     document.getElementById("nameBtn").style.display = "none";
-    // document.getElementById("hiScr").style.display = "none";
+    insertQuestions.style.display = "none";
 }
 
 function startGame() {
@@ -66,7 +66,7 @@ function loadNextQuestion() {
 }
 
 function showQuestion(questions) {
-    questionElement.textContent = questions.question
+    startText.textContent = questions.question
 }
 
 function startTimer() {

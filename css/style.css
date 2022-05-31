@@ -73,12 +73,16 @@ header {
     border-radius: 100px;
 }
 
+#scoreBox {
+    margin-right: 25%;
+}
 .button-box{
     display: flex;
     width: 100%;
+    justify-content: center;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-right: 29%
+    margin-right: 100px;
 }
 
 
