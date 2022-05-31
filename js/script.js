@@ -44,6 +44,12 @@ hideThings()
 function hideThings() {
     document.getElementById("nameBtn").style.display = "none";
     insertQuestions.style.display = "none";
+    answerButtonsElement1.style.display = "none";
+    answerButtonsElement2.style.display = "none";
+    answerButtonsElement3.style.display = "none";
+    answerButtonsElement4.style.display = "none";
+    timerElement.style.display = "none";
+
 }
 
 function startGame() {
@@ -67,6 +73,11 @@ function loadNextQuestion() {
 
 function showQuestion(questions) {
     startText.textContent = questions.question
+    answerButtonsElement1.style.display = "block";
+    answerButtonsElement2.style.display = "block";
+    answerButtonsElement3.style.display = "block";
+    answerButtonsElement4.style.display = "block";
+    timerElement.style.display = "block";
 }
 
 function startTimer() {
@@ -240,7 +251,7 @@ const questions = [{
         correctAnswer: "Blue"
     },
     {
-        question: "how many legs does a cat have?",
+        question: "How many legs does a cat have?",
         answers: [{
             text: "1",
             correct: false
@@ -257,7 +268,7 @@ const questions = [{
         correctAnswer: "4"
     },
     {
-        question: "what is the front a of a ship called?",
+        question: "What is the front a of a ship called?",
         answers: [{
             text: "Port",
             correct: false
