@@ -5,11 +5,21 @@ ul {
     list-style: none;
 }
 
+h1 {
+    background-color: antiquewhite;
+    padding: 1%;
+}
+
+li {
+    background-color: antiquewhite;
+    padding: 0.5em 0.5em 0.5em;
+}
+
 .Score-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10%;
+    margin-top: 5%;
     flex-direction: row;
 }
 
