@@ -76,10 +76,9 @@ header {
 .button-box{
     display: flex;
     width: 100%;
-    justify-content: center;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-right: 100px;
+    margin-right: 29%
 }
 
 
