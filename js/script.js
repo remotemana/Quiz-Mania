@@ -104,7 +104,12 @@ function endGame() {
     startText.textContent = "Your score is " + currentScore;
     alert("Game Over!")
 
+    var pN = document.querySelector("#playerName");
+    pN.setAttribute("type", "text");
+    var pB = document.querySelector("#nameBtn");
+    pB.setAttribute("type", "button");
     
+
 }
 
 const questions = [

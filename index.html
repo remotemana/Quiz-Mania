@@ -18,7 +18,6 @@
     </header>
 
     <div>
-
         <div class="start-game">
             <button class=gamestart id=start-game>
                 <h1 id="startText">Start Game</h1>
@@ -26,17 +25,13 @@
             <!-- also going to display 'Correct' and 'incorrect' -->
         </div>
         <div class="gameboard">
-            <div class="Score-box">
-                <div class="initials">
-                    <h3>Initials</h3>
-                </div>
-                <div class="Score">
-                    <h3>Score</h3>
-                </div>
-            </div>
             <div class="button-box">
                 <div id="question">
                     <h2 id="insertQuestions">Are you ready to play?</h2>
+                </div>
+                <div>
+                    <input type="hidden" placeholder="enter name here" id="playerName">
+                    <button type="hidden" id="nameBtn">Submit score!</button>
                 </div>
                 <div id="timerElement">Time Remaining:</div>
                 <div class="buttonflex">
@@ -49,7 +44,7 @@
         </div>
     </div>
 </body>
-<script src="script.js"></script>
+<script src="./js/script.js"></script>
 
 
 </html>
