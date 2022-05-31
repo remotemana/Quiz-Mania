@@ -5,3 +5,16 @@ ul {
     list-style: none;
 }
 
+.Score-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    flex-direction: row;
+}
+
+#hiScr {
+    display: none !important;
+}
+
+

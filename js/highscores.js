@@ -1,17 +1,21 @@
-var score = localStorage.getItem("score");
-document.getElementById("Score").textContent = score
+var score = JSON.parse(localStorage.getItem("score"));
+console.log(score)
 
+showHighscores()
 function showHighscores() {
- 
-    // pull high scores from local storage
-  
-    
     for (let i = 0; i < score.length; i = i + 2) {
-      var element = document.createElement("li");
+
+      console.log(score[i], score[i + 1])
+    
+      var liElement = document.createElement("li");
       var textElement = document.createTextNode(
-        score[i] + "  " + score[i + 1]
+        score[i] + ":  " + score[i + 1]
       );
-      element.appendChild(textElement);
-      document.getElementById("scoreList").appendChild(element);
+    
+      liElement.appendChild(textElement);
+      document.getElementById("scoreList").appendChild(liElement);
     }
+
+  
   }
+  

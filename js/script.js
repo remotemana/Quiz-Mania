@@ -43,7 +43,7 @@ hideThings()
 
 function hideThings() {
     document.getElementById("nameBtn").style.display = "none";
-    document.getElementById("hiScr").style.display = "none";
+    // document.getElementById("hiScr").style.display = "none";
 }
 
 function startGame() {
@@ -109,12 +109,24 @@ function checkAnswer(event) {
 
 }
 
-function endGame() {
-    document.getElementById("nameBtn").style.display = "block"
-    document.getElementById("hiScr").style.display = "block";
+function hideEnding() {
+    answerButtonsElement1.style.display = "none";
+    answerButtonsElement2.style.display = "none";
+    answerButtonsElement3.style.display = "none";
+    answerButtonsElement4.style.display = "none";
+    questionElement.style.display = "none";
+    timerElement.style.display = "none";
 
+    
+    document.getElementById("nameBtn").style.display = "block";
+    // document.getElementById("hiScr").style.display = "block";
     var pN = document.querySelector("#playerName");
     pN.setAttribute("type", "text");
+}
+
+function endGame() {
+    hideEnding()
+    
 
     clearInterval(timer);
     timerElement.textContent = "Time Remaining: "
@@ -136,6 +148,8 @@ function endGame() {
             storedScores.push(...currentScoreArr)
             localStorage.setItem("score", JSON.stringify(storedScores))
         }
+
+        window.location.replace("highscores.html")
     })
     
 }
